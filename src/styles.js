@@ -8,5 +8,17 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
+`
 
+export const Pill = styled.div`
+  background: #FFCD01;
+  border: 2px solid black;
+  border-radius: 30px;
+  height: 20px; 
+  width: 20px; 
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  display: flex;
 `

@@ -3,6 +3,7 @@ import GymContainer from './components/GymContainer';
 import Header from './components/Header'
 import { GlobalStyle } from './styles';
 import DetailPanel from './components/DetailPanel';
+import Search from './components/Search';
 import {Transition} from 'react-transition-group'
 
 const App = () => {
@@ -33,10 +34,29 @@ fetchData()
   const closePanel = () => { 
     setShowPanel(false)
   }
+
+  const filterGyms = (searchTerm) => {
+    //if searchTerm returns falsey value, display all gyms
+    if (!searchTerm) {
+      return gyms
+    } else {
+      //Convert the array and the input to lowercase to make non-case-sensitive
+      return gyms.filter((gym) => gym.title.toLowerCase().includes(searchTerm.toLowerCase())
+
+        ||
+      
+        gym.author.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    }
+  }
+  console.log(filterGyms('Octav'))
+
   return (
   <>
     <GlobalStyle />
-    <Header /> 
+      <Header>
+        <Search />
+    </Header>
     <GymContainer gyms={gyms} pickGym={pickGym} isPanelOpen={showPanel}/>
       <Transition in={showPanel} timeout={300}>
         {(state) => <DetailPanel gym={selectedGym} closePanel={closePanel} state={state}/>}
