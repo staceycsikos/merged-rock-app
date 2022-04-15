@@ -3,10 +3,12 @@ import GymContainer from './components/GymContainer';
 import Header from './components/Header'
 import { GlobalStyle } from './styles';
 import DetailPanel from './components/DetailPanel';
+import {Transition} from 'react-transition-group'
 
 const App = () => {
   const [gyms, setGyms] = useState([])
   const [selectedGym, setSelectedGym] = useState(null)
+  const [showPanel, setShowPanel] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,18 +27,21 @@ fetchData()
 
   const pickGym = (gym) => {
     setSelectedGym(gym)
+    setShowPanel(true)
   }
 
   const closePanel = () => { 
-    setSelectedGym(null)
+    setShowPanel(false)
   }
   return (
   <>
     <GlobalStyle />
     <Header /> 
-      <GymContainer gyms={gyms} pickGym={pickGym} isPanelOpen={selectedGym !== null }/>
-      {selectedGym && <DetailPanel gym={selectedGym} closePanel={closePanel}/>}
-    </>
+    <GymContainer gyms={gyms} pickGym={pickGym} isPanelOpen={showPanel}/>
+      <Transition in={showPanel} timeout={300}>
+        {(state) => <DetailPanel gym={selectedGym} closePanel={closePanel} state={state}/>}
+    </Transition>
+      </>
   );
 }
 
