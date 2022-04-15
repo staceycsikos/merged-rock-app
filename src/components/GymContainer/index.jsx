@@ -1,9 +1,15 @@
 import React from 'react'
-import { Container, H2 } from './styles'
+import { Container, H2, GymList } from './styles'
+import Gym from '../Gym'
 
-const GymContainer = () => (
+const GymContainer = ({gyms, pickGym}) => (
   <Container>
     <H2>All Gyms</H2>
+    <GymList>
+      {gyms.map((gym) => (
+        <Gym key={gym.id} gym={gym} pickGym={pickGym}/>
+      ))}
+    </GymList>
 
   </Container>
 )

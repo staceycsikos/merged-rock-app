@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: #a7e1f8;
+  background-color: #fffff0;
   padding: 160px 40px;
   overflow: scroll;
 
@@ -21,7 +21,7 @@ export const H2 = styled.h2`
 export const GymList = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-column: 40px;
+  grid-column-gap: 40px;
   grid-row-gap: 120px;
   margin-top: 40px;
   max-width: 1200px;
