@@ -26,13 +26,16 @@ fetchData()
   const pickGym = (gym) => {
     setSelectedGym(gym)
   }
-  console.log(selectedGym)
-return (
+
+  const closePanel = () => { 
+    setSelectedGym(null)
+  }
+  return (
   <>
     <GlobalStyle />
     <Header /> 
-    <GymContainer gyms={gyms} pickGym={pickGym} />
-    {selectedGym && <DetailPanel gym={selectedGym} />}
+      <GymContainer gyms={gyms} pickGym={pickGym} isPanelOpen={selectedGym !== null }/>
+      {selectedGym && <DetailPanel gym={selectedGym} closePanel={closePanel}/>}
     </>
   );
 }
