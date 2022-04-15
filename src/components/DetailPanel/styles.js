@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Panel = styled.article`
   background-color: #b37a4c;
   border-left: 2px solid #000;
-  height: calc(100vh - 82px);
+  height: calc(100vh - 80px);
   width: 660px;
   position: fixed;
   z-index: 2; 
@@ -21,4 +21,15 @@ export const Panel = styled.article`
     bottom: 0; 
     right: unset;
   }
+`
+
+export const P = styled.p`
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 30px 0 0; 
+`
+
+export const Em = styled.em`
+  font-style: italic; 
 `
