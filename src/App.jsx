@@ -32,7 +32,7 @@ return (
     <GlobalStyle />
     <Header /> 
     <GymContainer gyms={gyms} pickGym={pickGym} />
-    <DetailPanel gym={selectedGym} />
+    {selectedGym && <DetailPanel gym={selectedGym} />}
     </>
   );
 }
