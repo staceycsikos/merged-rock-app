@@ -3,7 +3,7 @@ import {debounce} from 'lodash-es'
 import { Container, H2, GymList } from './styles'
 import Gym from '../Gym'
 
-const GymContainer = ({gyms, pickGym, isPanelOpen}) => {
+const GymContainer = ({gyms, pickGym, isPanelOpen, title}) => {
   const [scroll, setScroll] = useState(0);
   const prevPanelState = useRef(false)
 
@@ -43,7 +43,7 @@ const GymContainer = ({gyms, pickGym, isPanelOpen}) => {
 
   return (
   <Container $isPanelOpen={isPanelOpen} $top={scroll}>
-    <H2>All Gyms</H2>
+      <H2>{title}</H2>
     <GymList>
       {gyms.map((gym) => (
         <Gym key={gym.id} gym={gym} pickGym={pickGym}/>
