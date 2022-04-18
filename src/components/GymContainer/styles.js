@@ -28,9 +28,18 @@ export const GymList = styled.div`
   margin-top: 40px;
   max-width: 1200px;
 
-  @media (max-width: 1200px) {
+ 
+`
+
+export const Wrapper = styled.div`
+ @media (max-width: 1200px) {
     grid-template-columns: repeat (3, 1fr);
     grid-row-gap: 60px;
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat (3, 1fr);
+    grid-column-gap: 20px;
   }
 
   @media (max-width: 600px) {

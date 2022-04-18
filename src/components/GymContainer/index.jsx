@@ -1,6 +1,6 @@
 import React, {useRef, useEffect, useState} from 'react'
 import {debounce} from 'lodash-es'
-import { Container, H2, GymList } from './styles'
+import { Container, H2, GymList, Wrapper } from './styles'
 import Gym from '../Gym'
 
 const GymContainer = ({gyms, pickGym, isPanelOpen, title}) => {
@@ -44,12 +44,13 @@ const GymContainer = ({gyms, pickGym, isPanelOpen, title}) => {
   return (
   <Container $isPanelOpen={isPanelOpen} $top={scroll}>
       <H2>{title}</H2>
+    <Wrapper>
     <GymList>
       {gyms.map((gym) => (
         <Gym key={gym.id} gym={gym} pickGym={pickGym}/>
       ))}
     </GymList>
-
+    </Wrapper>
   </Container>
 )
       }
