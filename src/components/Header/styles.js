@@ -1,15 +1,23 @@
 import styled from 'styled-components'
 import { ReactComponent as LogoSVG } from '../../assets/logo.svg'
 
-export const Logo = styled(LogoSVG)`
+export const Logo = styled.div`
   height: 40px;
-  width: 270px; 
-  display: block;
+  width: 25%; 
+  display: inline;
+  color: #FFCD01;
+  font-size: 50px;
+  font-size: 'Work Sans', sans-serif;
+  text-decoration: "none";
 
   @media (max-width: 800px) {
     height: 33px; 
     width: 222px;
   }
+`
+
+export const A = styled.a`
+  text-decoration: "none";
 `
 
 export const HeaderContainer = styled.header`

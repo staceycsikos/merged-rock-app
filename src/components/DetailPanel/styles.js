@@ -31,8 +31,10 @@ export const P = styled.p`
   font-size: 16px;
   line-height: 1.6;
   margin: 30px 0 0; 
+  color: #FFCD01;
+  
 `
-
+// Green: #014421;
 export const Em = styled.em`
   font-style: italic; 
 `
@@ -63,4 +65,13 @@ export const BG = styled.div`
   opacity: ${({$state}) => ($state === 'entering' || $state === "entered" ? 1 : 0)};
   pointer-events: ${({$state}) => ($state === 'exited' ? 'none' : 'auto')};
   transition: 300ms;
+`
+
+export const URL = styled.a`
+  color: #FFCD01;
+  text-decoration: "none";
+`
+export const isYellow = styled.div`
+    color: #FFCD01;
+
 `

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react'
-import { Panel, P, Em, CloseWrapper, BG } from './styles'
+import { Panel, P, CloseWrapper, BG, URL, isYellow } from './styles'
 import {Close} from '../../styles'
 import Gym from '../Gym'
 
@@ -15,7 +15,6 @@ const DetailPanel = ({ gym, closePanel, state }) => {
     prevGym.current = gym;
   }, [gym, prevGym])
   
-  console.log(state)
   return (
   <>
       <BG onClick={closePanel} $state={state}/>
@@ -27,9 +26,16 @@ const DetailPanel = ({ gym, closePanel, state }) => {
  <>
     <Gym gym={gym} isLarge={true}/>
     <P>{gym.description}</P>
-    <P>
-    <Em>Published in {gym.published}</Em>
-    </P>
+      <P>Contact: {gym.phoneNumber}</P>
+      <P>Day-pass: $ {gym.oneDayPass}</P>
+      <P>Membership: $ {gym.membership} /month</P>
+      <P>Rental: $ {gym.rentalGear}</P>
+      <P>Auto Belay? {gym.autoBelay ? "✅" : "🚫"}</P>
+      <P>Bouldering? {gym.bouldering ? "✅" : "🚫"}</P>
+      <P>Top Roping? {gym.topRoping ? "✅" : "🚫"}</P>
+            <P><a style={{textDecoration: 'none'}}
+              href={gym.url}><URL>Gym website: {gym.url}</URL></a></P>
+      <P>{gym.location?.fullAddress}</P>
         </>
       )}
       

@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
      try {
-        const response = await fetch('https://book-club-json.herokuapp.com/books')
+        const response = await fetch('https://rock-climbing-api.herokuapp.com/api/gyms')
         
         const gyms = await response.json()
         setGyms(gyms)    
@@ -48,7 +48,7 @@ fetchData()
     if (!searchTerm) {
       setFilteredGyms(gyms)
     } else {
-      setFilteredGyms( gyms.filter((gym) => stringSearch(gym.title, searchTerm) || stringSearch(gym.author, searchTerm)
+      setFilteredGyms( gyms.filter((gym) => stringSearch(gym.name, searchTerm) || stringSearch(gym.location.address, searchTerm)
       )
       )
     }
@@ -67,7 +67,7 @@ fetchData()
         gyms={filteredGyms}
         pickGym={pickGym}
         isPanelOpen={showPanel}
-        title={hasFiltered ? 'Search results' : "All books"} />
+        title={hasFiltered ? 'Search results' : "All Gyms"} />
       <Transition in={showPanel} timeout={300}>
         {(state) => <DetailPanel gym={selectedGym} closePanel={closePanel} state={state}/>}
     </Transition>

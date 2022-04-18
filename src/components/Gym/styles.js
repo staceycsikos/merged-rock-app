@@ -17,16 +17,20 @@ export const Title = styled.h3`
   font-size: ${({ $isLarge }) => ($isLarge ? '42px' : '28px')};
   margin: 0 0 10px 0;
   line-height: 1.3;
+  color: ${({ $isLarge }) => ($isLarge ? '#FFCD01' : '#000')};
+
 
   @media (max-width: 800px) {
     font-size: ${({ $isLarge }) => ($isLarge ? '32px' : '22px')};
   }
 `
 
-export const Author = styled.h4`
+export const Address = styled.h4`
   font-size: 16px; 
   line-height: 1.6;
   margin: 0;
   font-family: 'Libre Baskerville, serif';
   font-style: italic;
+  color: ${({ $isLarge }) => ($isLarge ? '#FFCD01' : '#000')};
+  
 `

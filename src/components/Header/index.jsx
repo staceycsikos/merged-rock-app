@@ -1,11 +1,13 @@
 import React from 'react'
-import { Logo, HeaderContainer } from './styles'
+import { Logo, HeaderContainer, A } from './styles'
 
 const Header = ({children}) => (
   <HeaderContainer>
-    <a href='/'>
-      <Logo title="Gym Club Logo"/>
-    </a>
+    <A
+      style={{textDecoration: 'none'}}
+      href='/'>
+      <Logo title="Peak Scout Logo">Peak Scout</Logo>
+    </A>
     {children}
   </HeaderContainer>
 
