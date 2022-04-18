@@ -41,7 +41,7 @@ fetchData()
   const filterGyms = (searchTerm) => {
 //Convert the array and the input to lowercase & string to make non-case-sensitive
     const stringSearch = (gymAttribute, searchTerm) => 
-      gymAttribute.toLowerCase.includes(searchTerm.toLowerCase())
+      gymAttribute.toLowerCase().includes(searchTerm.toLowerCase())
 
 
     //if searchTerm returns falsey value, display all gyms
