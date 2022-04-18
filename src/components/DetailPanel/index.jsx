@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react'
-import { Panel, P, CloseWrapper, BG, URL, isYellow } from './styles'
+import { Panel, P, CloseWrapper, BG, URL} from './styles'
 import {Close} from '../../styles'
 import Gym from '../Gym'
 

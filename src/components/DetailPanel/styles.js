@@ -70,8 +70,9 @@ export const BG = styled.div`
 export const URL = styled.a`
   color: #FFCD01;
   text-decoration: "none";
+  &:hover {
+    background-color: #014421;
+  } 
 `
-export const isYellow = styled.div`
-    color: #FFCD01;
 
-`
+
